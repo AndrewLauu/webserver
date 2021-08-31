@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+    <title>Recent SMS</title>
+    <script>
+    copy = (event) => {
+    let innerText = event.target.innerText;
+    var tmpInput = document.createElement("input");
+    document.body.appendChild(tmpInput);
+    tmpInput.value = innerText;
+    tmpInput.select();
+    document.execCommand("cut"); // copy
+    tmpInput.remove();
+    alert("复制成功！");
+    }
+    </script>
+    </head>
+
+    <body>
+    <h1>Recent SMS</h1>
+    <button type="button" onclick="location.reload()">refresh</button>
+<table width="100%" border="1" style="font-size:20px" cellspacing="0">
+    <tr>
+        <th>time</th>
+        <th>content</th>
+    </tr>
+<tr>
+    <td>{{t1}}</td>
+    <td onclick="copy(event)">{{s1}}</td>
+</tr>
+<tr>
+    <td>{{t2}}</td>
+    <td onclick="copy(event)">{{s2}}</td>
+</tr>
+<tr>
+    <td>{{t3}}</td>
+    <td onclick="copy(event)">{{s3}}</td>
+</tr>
+</table>
+</body>
+</html>
